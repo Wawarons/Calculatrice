@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #333333;
+}
+
+h1 {
+    text-align: center;
+    color: orange;
+    font-size: 3em;
+    margin: 10px;
+}
+
+
+.calculatrice {
+position: relative;
+transform: translateY(25%);
+width: 400px;
+height: 450px;
+margin: 0 auto;
+background:#3f3f3f;
+box-shadow: 1px 2px 2px 2px rgb(0 0 0 / 50%);
+border-radius: 15px;
+display: grid; 
+grid-template-columns: 1fr 1fr 1fr; 
+grid-template-rows: 0.5fr 0.5fr 1fr 1fr; 
+gap: 0px 0px; 
+grid-template-areas: 
+    "screen screen screen"
+    "top top bottomRight"
+    "bottomLeft bottomLeft bottomRight"
+    "bottomLeft bottomLeft bottomRight"; 
+
+    p{
+        color: white;
+        font-weight: bold;
+        font-size: 2em;
+    }
+    
+      .button {
+          transition: .2s;
+          width: 70px;
+          height: 53px;
+          background: rgb(245, 57, 0);
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          margin: 5px;
+          border-radius: 5px;
+          box-shadow: 2px 5px 2px rgb(0 0 0 / 75%);
+          user-select: none;
+          cursor: pointer;
+
+          &:hover {
+              background: rgb(190, 51, 9);
+          }
+
+          &:active {
+            box-shadow: none;
+            background: rgb(0 0 0 / 15%);
+
+            p {
+                color: black;
+            }
+          }
+      }
+      
+      .top {
+          grid-area: top;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          width: 100%;
+          margin: 5px 0;
+
+          .button {
+              width: 100%;
+          }
+        }
+        
+        .bottom-left {
+            grid-area: bottomLeft;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .bottom-right {
+            grid-area: bottomRight;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .button {
+                width: 90%;
+                height: fit-content;
+                margin-top: 0;
+            }
+        }
+        
+        .screen {
+            position: relative;
+            top: 5px;
+            width: 75%;
+            height: 75px;
+            margin: 10px auto;
+            grid-area: screen;
+            border-radius: 5px;
+            box-shadow: inset 1px 1px 1px rgb(0 0 0 / 25%);
+            background: white;
+            
+            p{
+                color: black;
+                float: right;
+                position: relative;
+                top: 25%;
+            }
+        }
+}
